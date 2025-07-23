@@ -7,6 +7,26 @@ config({ path: ['.env.local', '.env'] })
 const wallet = Wallet.fromSeed(process.env.XRPL_SEED!)
 console.log("Address:", wallet.address)
 
-const client = new Client('wss://s.altnet.rippletest.net:51233')
+const client = new Client('wss://s.devnet.rippletest.net:51233/')
 await client.connect()
-console.log(await client.getBalances(wallet.address))
+
+console.log("before", JSON.stringify(await client.request({
+    command: 'account_objects',
+    account: wallet.address
+}), null, 2))
+
+const res = await client.submitAndWait({
+    TransactionType: 'CredentialCreate',
+    Account: wallet.address,
+    Subject: wallet.address,
+    CredentialType: "6D795F63726564656E7469616C",
+}, {
+    wallet: wallet,
+})
+
+console.log("Transaction result:", JSON.stringify(res, null, 2))
+
+console.log("after", await client.request({
+    command: 'account_objects',
+    account: wallet.address
+}))
