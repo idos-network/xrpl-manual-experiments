@@ -19,7 +19,7 @@ const res = await client.submitAndWait({
     TransactionType: 'CredentialCreate',
     Account: wallet.address,
     Subject: wallet.address,
-    CredentialType: "6D795F63726564656E7469616C",
+    CredentialType: Math.random().toString(16).slice(2, 10),
 }, {
     wallet: wallet,
 })
@@ -30,3 +30,5 @@ console.log("after", await client.request({
     command: 'account_objects',
     account: wallet.address
 }))
+
+await client.disconnect()
