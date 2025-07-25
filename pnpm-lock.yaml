@@ -11,6 +11,12 @@ importers:
       '@dotenvx/dotenvx':
         specifier: ^1.48.3
         version: 1.48.3
+      '@stablelib/hex':
+        specifier: ^2.0.1
+        version: 2.0.1
+      '@stablelib/utf8':
+        specifier: ^2.0.1
+        version: 2.0.1
       xrpl:
         specifier: ^4.3.0
         version: 4.3.0
@@ -51,6 +57,12 @@ packages:
 
   '@scure/bip39@1.6.0':
     resolution: {integrity: sha512-+lF0BbLiJNwVlev4eKelw1WWLaiKXw7sSl8T6FvBlWkdX+94aGJ4o8XjUdlyhTCjd8c+B3KT3JfS8P0bLRNU6A==}
+
+  '@stablelib/hex@2.0.1':
+    resolution: {integrity: sha512-nsAgs3109myeijRQg3HASq3vlxe/8uDKHEUuIwn9ZLxfWtXavgojAGLBjI7Sda6seOhy7rKrpmeehYo0Z5VGQA==}
+
+  '@stablelib/utf8@2.0.1':
+    resolution: {integrity: sha512-7+C2Iap42fbLyoKMaEIIDSb1TrcQVo+lGDItYAwb2JoAJr7QffyuDnbtvV/qzTyokOIMBrJgT+Rpsp1bPR8SjA==}
 
   '@types/node@24.1.0':
     resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
@@ -240,6 +252,10 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.8.0
       '@scure/base': 1.2.6
+
+  '@stablelib/hex@2.0.1': {}
+
+  '@stablelib/utf8@2.0.1': {}
 
   '@types/node@24.1.0':
     dependencies:
